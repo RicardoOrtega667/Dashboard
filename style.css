@@ -1,0 +1,19 @@
+#code{
+    display : flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    
+    
+}
+
+
+.tarjeta {
+    width :300px;
+    margin : 20px;
+    border : 2px black solid 
+    font-size : 40px;
+    font-weight: bold;
+    
+}
+
