@@ -27,3 +27,16 @@ img {
 a{
     color:black
 }
+body{
+    background-color:purple;
+}
+
+header{
+    color:white;
+    background-color: black;
+}
+
+#myChart{
+    background-color: lightblue;
+    
+}

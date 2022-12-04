@@ -11,15 +11,10 @@ function imprimir(datos) {
     <div>
     <p>id : ${dato.id} </p>
     <p>Rango o posicion : ${dato.rank} </p>
-    <p>Simbolo : ${dato.symbol} </p>
+    <p>Abreviatura : ${dato.symbol} </p>
     <p>Nombre comercial : ${dato.name} </p>
-    <p>Supply : ${dato.supply} </p>
-    <p>Max Supply : ${dato.maxSupply} </p>
-    <p>market Cap Usd : ${dato.marketCapUsd} </p>
-    <p>volumeUsd24Hr : ${dato.volumeUsd24Hr} </p>
-    <p>priceUsd : ${dato.priceUsd} </p>
-    <p>changePercent24Hr : ${dato.changePercent24Hr} </p>
-    <p>vwap24Hr : ${dato.vwap24Hr} </p>
+    <p>price en Dolares : 
+    body$${dato.priceUsd} </p>
     <a href=${dato.explorer}>Mas informacion, presione aqui</a>
     </div>
     <div>
@@ -28,6 +23,27 @@ function imprimir(datos) {
   });
 }
 
+const ctx = document.getElementById('myChart');
+
+      
+new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: [etiquetas],
+    datasets: [{
+      label: '# of Votes',
+      data: [12, 19, 3, 5, 2, 3],
+      borderWidth: 12
+    }]
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
 
 // let url = "https://pokeapi.co/api/v2/pokemon/"
 // let container = document.getElementById("container");
