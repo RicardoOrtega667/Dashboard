@@ -1,37 +1,117 @@
-let url = "https://dragon-ball-super-api.herokuapp.com/api/characters/";
-let container = document.getElementById("container");
-let code = document.getElementById("code");
-
-const llamada = async () => {
-  const resp = await fetch(url);
-  const datos = await resp.json();
-
-  // code.innerHTML = JSON.stringify(datos.imageUrl);
-
-  imprimir(datos);
-  console.log(datos);
-};
+async function crypto() {
+  const respuesta = await fetch("https://api.coincap.io/v2/assets");
+  const resultado = await respuesta.json();
+  imprimir(resultado.data);
+}
 
 function imprimir(datos) {
   datos.forEach((dato) => {
-    const div = document.createElement("div");
-    div.className = "tarjeta"
-        div.innerHTML += `
-    <img src=${dato.imageUrl} />
-    <p>Nombre: ${dato.name}</p>
-    <p>Especie: ${dato.specie}</p>
-    <p>Papel: ${dato.role}</p>
-    <p>Planeta: ${dato.originplanet}</p>
-    <p>Estatus actual: ${dato.status}</p>
-    <p>Universo al que pertenece: ${dato.universe}</p>
-    <p>Numero de ID : ${dato.id}</p>
+    code.innerHTML += `
+    <div class="contenedores">
+    <div>
+    <p>id : ${dato.id} </p>
+    <p>Rango o posicion : ${dato.rank} </p>
+    <p>Simbolo : ${dato.symbol} </p>
+    <p>Nombre comercial : ${dato.name} </p>
+    <p>Supply : ${dato.supply} </p>
+    <p>Max Supply : ${dato.maxSupply} </p>
+    <p>market Cap Usd : ${dato.marketCapUsd} </p>
+    <p>volumeUsd24Hr : ${dato.volumeUsd24Hr} </p>
+    <p>priceUsd : ${dato.priceUsd} </p>
+    <p>changePercent24Hr : ${dato.changePercent24Hr} </p>
+    <p>vwap24Hr : ${dato.vwap24Hr} </p>
+    <a href=${dato.explorer}>Mas informacion, presione aqui</a>
+    </div>
+    <div>
 
-            
-    
-    `;
-    code.appendChild(div);
+        `;
   });
 }
+
+
+// let url = "https://pokeapi.co/api/v2/pokemon/"
+// let container = document.getElementById("container");
+// let code = document.getElementById("code");
+
+// const llamada = async () => {
+//   const resp = await fetch(url);
+//   const datos = await resp.json();
+
+//   // code.innerHTML = JSON.stringify(datos.imageUrl);
+
+//   console.log(datos);
+// };
+
+// function imprimir(datos) {
+//   datos.forEach((dato) => {
+//     const div = document.createElement("div");
+//     div.className = "tarjeta";
+//     div.innerHTML += `
+
+//     <img src=${dato.imageUrl} />
+//     <p>Nombre: ${dato.name}</p>
+//     <p>Especie: ${dato.specie}</p>
+//     <p>Papel: ${dato.role}</p>
+//     <p>Planeta: ${dato.originplanet}</p>
+//     <p>Estatus actual: ${dato.status}</p>
+//     <p>Universo al que pertenece: ${dato.universe}</p>
+//     <p>Numero de ID : ${dato.id}</p>
+
+//     `;
+//     code.appendChild(div);
+//   });
+// }
+
+// const graficas = async () => {
+//   const resp = await fetch(url);
+//   const datos = await resp.json();
+
+//   // code.innerHTML = JSON.stringify(datos.imageUrl);
+
+//   paint(datos);
+// };
+
+// function paint(datos) {
+//   const universo0 = datos.filter((dato) => {
+//     return dato.universe == 0;
+//   });
+//   const universo1 = datos.filter((dato) => {
+//     return dato.universe == 1;
+//   });
+//   const universo2 = datos.filter((dato) => {
+//     return dato.universe == 2;
+//   });
+//   const universo3 = datos.filter((dato) => {
+//     return dato.universe == 3;
+//   });
+//   const universo4 = datos.filter((dato) => {
+//     return dato.universe == 4;
+//   });
+//   const universo5 = datos.filter((dato) => {
+//     return dato.universe == 5;
+//   });
+//   const universo6 = datos.filter((dato) => {
+//     return dato.universe == 6;
+//   });
+//   const universo7 = datos.filter((dato) => {
+//     return dato.universe == 7;
+//   });
+//   const universo8 = datos.filter((dato) => {
+//     return dato.universe == 8;
+//   });
+//   const universo9 = datos.filter((dato) => {
+//     return dato.universe == 9;
+//   });
+//   const universo10 = datos.filter((dato) => {
+//     return dato.universe == 10;
+//   });
+
+//   const arregloUniversos = [0,1,2,3,4,5,6,7,8,9,10];
+//   const dataUniversos = [universo0.length, universo1.length, universo2.length,universo3.length,universo4.length,universo5.length,universo6.length,universo7.length,universo8.length,universo9.length,universo10.length]
+
+//   console.log(dataUniversos)
+//   console.log(arregloUniversos)
+// }
 
 // }
 
