@@ -1,19 +1,29 @@
-#code{
-    display : flex;
+#code {
+    display: flex;
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
-    
-    
+
+
 }
 
-
-.tarjeta {
-    width :300px;
-    margin : 20px;
-    border : 2px black solid 
-    font-size : 40px;
-    font-weight: bold;
-    
+img {
+    height: 200px;
+    overflow: hidden;
+    object-fit: contain;
+    object-position: center;
 }
 
+.contenedores {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+    border: 2px black solid;
+    background-color: blue;
+    color: white
+
+}
+
+a{
+    color:black
+}

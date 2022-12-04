@@ -5,24 +5,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Consulta de Api's</title>
     <link rel="stylesheet" href="./style.css">
 
 </head>
 
 <body>
+    <header>
+        Observa y analiza la info de las monedas mas conocidas!
+    </header>
     <div id="container">
-        <input type="button" value="consultar" onclick="llamada()"; />
-        <br>
-        <input id="nombre" type="text"  placeholder="Ingrese nombre del personaje" onclick="peticion();" />
-        <div>
-            <div id="code"></div>
-        </div>
-        
-
-
-
+        <input type="button" value="consultar" onclick="crypto()"; />
+        <div id="code"></div>
     </div>
+    
+    <div>
+        <canvas id="myChart"></canvas>
+      </div>
+      
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      
+      <script src="./grafica.js">
+       
+      </script>
     <script src="./fetch.js"></script>
 </body>
 
