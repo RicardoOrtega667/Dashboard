@@ -1,4 +1,6 @@
 async function crypto() {
+  let chart = document.getElementById("prueba");
+  chart.innerHTML = "";
   const respuesta = await fetch("https://api.coincap.io/v2/assets");
   const resultado = await respuesta.json();
   imprimir(resultado.data);
@@ -22,27 +24,6 @@ function imprimir(datos) {
         `;
   });
 }
-
-const ctx = document.getElementById('myChart');
-      
-new Chart(ctx, {
-  type: 'bar',
-  data: {
-    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-    datasets: [{
-      label: '# of Votes',
-      data: [12, 19, 3, 5, 2, 3],
-      borderWidth: 12
-    }]
-  },
-  options: {
-    scales: {
-      y: {
-        beginAtZero: true
-      }
-    }
-  }
-});
 
 // let url = "https://pokeapi.co/api/v2/pokemon/"
 // let container = document.getElementById("container");
